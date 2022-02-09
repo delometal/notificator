@@ -18,6 +18,7 @@ public class NotificationController {
 	
 	@PostMapping(path = "send_email") 
 	public ResponseEntity<String> sendEmail(@RequestBody Email email) {
+		System.out.println(email.toString());
 		sender.sendEmail(email);
 		return new ResponseEntity<>("Email mandata", HttpStatus.OK);
 	}
