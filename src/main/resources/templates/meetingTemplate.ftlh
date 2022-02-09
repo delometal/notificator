@@ -7,9 +7,14 @@
     <title>Spring Boot Email using FreeMarker</title>
 </head>
 <body>
-<div style="margin-top: 10px">Greetings, ${user.name}</div>
-<div>Your username is <b>${user.username}</b></div>
-<br/>
-<div> Have a nice day..!</div>
+
+	<p>${creator} ha ${azione} un evento <b>${eventType}</b> </p>
+	<p>La data è ${data}</p>
+	<p> I partecipanti sono:</p>
+	<ol>
+		<#list partecipanti as partecipante>		
+			<li>${partecipante}</li>			
+		</#list>		
+	</ol>	
 </body>
 </html>
