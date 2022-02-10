@@ -7,14 +7,19 @@
     <title>Spring Boot Email using FreeMarker</title>
 </head>
 <body>
-
-	<p>${creator} ha ${azione} un evento <b>${eventType}</b> </p>
-	<p>La data è ${data}</p>
+	<p>${creator} ha <b>${azione}</b> un evento <b>${eventType}</b> </p>
+	<p>Da <b>${dataInizio}</b> a <b>${dataFine}</b></p>
 	<p> I partecipanti sono:</p>
 	<ol>
 		<#list partecipanti as partecipante>		
 			<li>${partecipante}</li>			
 		</#list>		
 	</ol>	
+	<p> <#if presenza == true>
+		L'evento è programmato in presenza 
+		<#else>
+		L'evento sarà online
+		</#if>
+	</p>
 </body>
 </html>
