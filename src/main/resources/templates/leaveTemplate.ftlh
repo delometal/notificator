@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<p>${richiedente} ha richiesto approvazione per ${eventType}</p>
-	<p>La data è ${data}</p>
+	<p>${richiedente} ha <b>${azione}</b> richiesta per <b>${eventType}</b> </p>
+	<p>Da <b>${data-inizio}</b> a <b>${data-fine}</b></p>
 </body>
 </html>
