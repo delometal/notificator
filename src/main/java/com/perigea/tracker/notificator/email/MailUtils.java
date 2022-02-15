@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.StringWriter;
 import java.util.List;
 
+import javax.activation.DataHandler;
 import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.Multipart;
@@ -11,10 +12,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import javax.mail.util.ByteArrayDataSource;
 
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
+import com.perigea.tracker.commons.dto.AttachmentDto;
 import com.perigea.tracker.commons.enums.EmailType;
 import com.perigea.tracker.commons.exception.MailException;
 import com.perigea.tracker.commons.model.Email;
@@ -60,10 +63,15 @@ public class MailUtils {
 			//ADD ATTACHMENTS IF NEEDED
 			if(!Utils.isEmpty(mail.getAttachments())) {
 				MimeBodyPart attachmentBodyPart = new MimeBodyPart();
-				for(File attch : mail.getAttachments()) {
-					attachmentBodyPart.attachFile(attch);
+				for(AttachmentDto attch : mail.getAttachments()) {
+//					attachmentBodyPart.attachFile(new File(attch.getFileName()));
+					ByteArrayDataSource bds = new ByteArrayDataSource(attch.getBArray(), attch.getFileName()); 
+					attachmentBodyPart.setDataHandler(new DataHandler(bds)); 
+					attachmentBodyPart.setFileName(bds.getName());
+					multipart.addBodyPart(attachmentBodyPart);
+					
 				}
-				multipart.addBodyPart(attachmentBodyPart);
+				
 			}
 			
 			mailMessage.setContent(multipart);
