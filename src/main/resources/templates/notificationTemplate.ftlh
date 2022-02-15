@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<p>${utente} ha <b>${azione}</b> richiesta per <b>${eventType}</b> </p>
-	<p>Da <b>${dataInizio}</b> a <b>${dataFine}</b></p>
+	<p><b>Reminder: </b>${eventType} creato da ${creator} inizierà tra <b>15 minuti</b></p>
+
 </body>
 </html>
