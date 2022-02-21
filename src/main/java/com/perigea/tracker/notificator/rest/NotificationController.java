@@ -14,12 +14,12 @@ import com.perigea.tracker.notificator.email.EmailSender;
 public class NotificationController {
 	
 	@Autowired
-	private EmailSender sender;
+	private EmailSender emailClient;
 	
 	@PostMapping(path = "send_email") 
 	public ResponseEntity<String> sendEmail(@RequestBody Email email) {
 		System.out.println(email.toString());
-		sender.sendEmail(email);
+		emailClient.mandaNotifica(email);
 		return new ResponseEntity<>("Email mandata", HttpStatus.OK);
 	}
 }

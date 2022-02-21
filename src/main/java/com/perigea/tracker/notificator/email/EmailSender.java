@@ -7,9 +7,10 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.perigea.tracker.commons.model.Email;
+import com.perigea.tracker.notificator.generic.NotificaInterface;
 
 @Service
-public class EmailSender {
+public class EmailSender implements NotificaInterface<Email> {
 
 	@Autowired
 	private JavaMailSender javaMailSender;
@@ -17,7 +18,8 @@ public class EmailSender {
 	@Autowired
 	private MailUtils mailUtils;
 	
-	public void sendEmail(Email email) {
+	@Override
+	public void mandaNotifica(Email email) {
 		try {
 			MimeMessage mimeMessage = mailUtils.builMessage(javaMailSender, email);
 			javaMailSender.send(mimeMessage);
