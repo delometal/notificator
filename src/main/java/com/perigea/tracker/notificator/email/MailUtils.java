@@ -1,6 +1,5 @@
 package com.perigea.tracker.notificator.email;
 
-import java.io.File;
 import java.io.StringWriter;
 import java.util.List;
 
