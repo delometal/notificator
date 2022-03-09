@@ -8,7 +8,18 @@
 </head>
 <body>
 
-	<p>${utente} ha <b>${azione}</b> richiesta per <b>${eventType}</b> </p>
-	<p>Da <b>${dataInizio}</b> a <b>${dataFine}</b></p>
+	<p>${utente} ha <b>${azione}</b> una richiesta per l'approvazione di feie/permessi per le seguenti date: </p>
+	
+	<table>
+		<tr>
+			<th>Data</th>  <th>TipoEvento</th>
+		</tr>
+		<#list events as event>
+		<tr>
+			<td>${event.data}</td> <td>${event.tipo}</td>
+		<tr>
+		</#list>
+	</table>
+	
 </body>
 </html>
