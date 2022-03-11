@@ -9,9 +9,9 @@
 <body>
 	
 	 <#if approved == true>
-		<p> ${utente} <b>${azione}</b> la richiesta per l'approvazione di feie/permessi. 
+		<p> ${utente} <b>${azione}</b> la richiesta per l'approvazione di ferie/permessi. 
 	<#else>
-		<p>${utente} <b>${azione}</b> la richiesta per l'approvazione di feie/permessi in quanto sono da rivedere le seguenti date: </p>
+		<p>${utente} <b>${azione}</b> la richiesta per l'approvazione di ferie/permessi in quanto sono da rivedere le seguenti date: </p>
 	
 		<table>
 			<tr>

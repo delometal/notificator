@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<p>${utente} ha <b>${azione}</b> una richiesta per l'approvazione di feie/permessi per le seguenti date: </p>
+	<p>${utente} ha <b>${azione}</b> una richiesta per l'approvazione di ferie/permessi per le seguenti date: </p>
 	
 	<table>
 		<tr>
