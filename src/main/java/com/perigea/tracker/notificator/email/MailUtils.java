@@ -4,6 +4,7 @@ import java.io.StringWriter;
 import java.util.List;
 
 import javax.activation.DataHandler;
+import javax.activation.DataSource;
 import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.Multipart;
@@ -61,12 +62,12 @@ public class MailUtils {
 			
 			//ADD ATTACHMENTS IF NEEDED
 			if(!Utils.isEmpty(mail.getAttachments())) {
-				MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+				
 				for(AttachmentDto attch : mail.getAttachments()) {
-//					attachmentBodyPart.attachFile(new File(attch.getFileName()));
-					ByteArrayDataSource bds = new ByteArrayDataSource(attch.getBArray(), attch.getFileName()); 
-					attachmentBodyPart.setDataHandler(new DataHandler(bds)); 
-					attachmentBodyPart.setFileName(bds.getName());
+					MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+					DataSource source = new ByteArrayDataSource(attch.getBArray(), attch.getMIMEType());
+					attachmentBodyPart.setDataHandler(new DataHandler(source)); 
+					attachmentBodyPart.setFileName(attch.getFilename());
 					multipart.addBodyPart(attachmentBodyPart);
 					
 				}

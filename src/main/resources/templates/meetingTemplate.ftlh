@@ -21,5 +21,7 @@
 		L'evento sarà online
 		</#if>
 	</p>
+	
+	<img src= "https://media-exp1.licdn.com/dms/image/C4D0BAQEajLUmKqd6dQ/company-logo_200_200/0/1537444878799?e=1655337600&v=beta&t=61OF0UT25K5sV1FdKCIVQUTGV-23W0ZcYyQkbXFDemM" width="200px"/>
 </body>
 </html>
