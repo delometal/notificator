@@ -14,6 +14,5 @@ public class ImportedConfiguration {
 	@Bean
 	public ThreadPoolExecutor threadExecutor() {
 		return (ThreadPoolExecutor) Executors.newFixedThreadPool(20);
-
 	}
 }

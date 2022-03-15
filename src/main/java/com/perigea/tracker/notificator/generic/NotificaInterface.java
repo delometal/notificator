@@ -4,6 +4,6 @@ import com.perigea.tracker.commons.model.GenericNotification;
 
 public interface NotificaInterface <T extends GenericNotification> {
 
-	public void mandaNotifica(T notifica);
+	public void sendNotification(T notification);
 	
 }

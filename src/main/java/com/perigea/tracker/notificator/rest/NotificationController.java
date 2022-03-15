@@ -27,30 +27,12 @@ public class NotificationController {
 	
 	@PostMapping(path = "send_email")
 	public ResponseEntity<ResponseDto<String>> sendEmail(@RequestBody Email email) {
-		
 		threadExecutor.execute(()->{
-			logger.info(email.toString());
-			emailClient.mandaNotifica(email);
+			emailClient.sendNotification(email);
+			logger.info("Email sent with event id: ", email.getEventId());
 		});
-//		Thread controller = new Thread(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//				logger.info(email.toString());
-//				emailClient.mandaNotifica(email);
-//				try {
-//					Thread.sleep(5000);
-//					logger.info("Thread interrupted");
-//				} catch (InterruptedException e) {
-//					return;
-//				}
-//			}
-//
-//		});
-//		controller.run();
-
-		ResponseDto<String> genericDto = ResponseDto.<String>builder().data("Email mandata con successo").build();
+		
+		ResponseDto<String> genericDto = ResponseDto.<String>builder().data("Email sending request submitted").build();
 		return ResponseEntity.ok(genericDto);
-
 	}
 }
