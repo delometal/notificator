@@ -62,16 +62,13 @@ public class MailUtils {
 			
 			//ADD ATTACHMENTS IF NEEDED
 			if(!Utils.isEmpty(mail.getAttachments())) {
-				
 				for(AttachmentDto attch : mail.getAttachments()) {
 					MimeBodyPart attachmentBodyPart = new MimeBodyPart();
-					DataSource source = new ByteArrayDataSource(attch.getBArray(), attch.getMIMEType());
+					DataSource source = new ByteArrayDataSource(attch.getBArray(), attch.getMimeType());
 					attachmentBodyPart.setDataHandler(new DataHandler(source)); 
 					attachmentBodyPart.setFileName(attch.getFilename());
 					multipart.addBodyPart(attachmentBodyPart);
-					
 				}
-				
 			}
 			
 			mailMessage.setContent(multipart);
