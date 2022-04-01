@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.perigea.tracker</groupId>
-	<artifactId>notificatator</artifactId>
+	<artifactId>notificator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>com.perigea.tracker.notificatator</name>
+	<name>com.perigea.tracker.notificator</name>
 	<description>Invio notifiche email perigea</description>
 	<properties>
 		<java.version>11</java.version>
