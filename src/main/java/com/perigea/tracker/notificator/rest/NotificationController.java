@@ -29,7 +29,7 @@ public class NotificationController {
 	public ResponseEntity<ResponseDto<String>> sendEmail(@RequestBody Email email) {
 		threadExecutor.execute(()->{
 			emailClient.sendNotification(email);
-			logger.info("Email sent with event id: ", email.getEventId());
+			logger.info(String.format("Email sent with event id: %s", email.getEventId()));
 		});
 		
 		ResponseDto<String> genericDto = ResponseDto.<String>builder().data("Email sending request submitted").build();
