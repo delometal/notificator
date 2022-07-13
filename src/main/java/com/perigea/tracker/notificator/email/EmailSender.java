@@ -29,6 +29,7 @@ public class EmailSender implements NotificaInterface<Email> {
 			javaMailSender.send(mimeMessage);
 		} catch (Exception e) {
 			logger.error("error sending notification: " + e.getMessage());
+			e.printStackTrace();
 		}
 	}
 	
