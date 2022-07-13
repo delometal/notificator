@@ -8,14 +8,14 @@
 </head>
 <body>
 	
-	<p> Benvenuto in Perigea ${utente}, qui di seguito sono elencate le tue <b>credenziali iniziali</b>. </p>
-	<p> Una volta loggato per la prima volta potrai modificare la password nella pagina di modifica del profilo </p> 
+	<p> Qui di seguito vi è il codice per il recupero delle credenziali  </p>
+	<p> Inserire il codice all'interno dell'apposito spazio insieme alla nuova password </p> 
 	<ol>
-		<li> Username: ${username} </li>
-	 	<li> Password: ${password} </li>	 	
+		<li> Codice_recupero: ${codice_recupero} </li>
+	 	 	
 	</ol>
 	
-
+	<p> <b>ATTENZIONE </b> il codice fornito sarà valido solamente per un'ora:  </p>
 
 	 	
 	
